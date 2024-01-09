@@ -2,6 +2,7 @@ import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaSort } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
+
 import orderData from "../db/db";
 
 const Transactions = () => {
@@ -37,11 +38,11 @@ const Transactions = () => {
           </thead>
           <tbody>
             {orderData.map((order, index) => (
-              <tr key={index} className="border p-4">
-                <td className="border-b pb-4 align-middle text-blue-600"> {order.orderId} </td>
-                <td className="border-b pb-4 align-middle"> {order.orderDate} </td>
-                <td className="border-b pb-4 align-middle text-right"> {`₹${order.orderAmount}`} </td>
-                <td className="border-b pb-4 align-middle text-right"> {`₹${order.transactionFees}`} </td>
+              <tr key={index} className="border-b p-4">
+                <td className="pb-4 align-middle text-blue-600"> {order.orderId} </td>
+                <td className="pb-4 align-middle"> {order.orderDate} </td>
+                <td className="pb-4 align-middle text-right"> {`₹${order.orderAmount}`} </td>
+                <td className="pb-4 align-middle text-right"> {`₹${order.transactionFees}`} </td>
               </tr>
             ))}
           </tbody>
