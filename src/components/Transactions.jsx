@@ -6,7 +6,7 @@ import orderData from "../db/db";
 
 const Transactions = () => {
   return (
-    <div className="flex flex-col m-6">
+    <div className="flex flex-col ml-6 mt-4">
       <span className="ml-2 font-bold">Transactions | This Month</span>
       <div className="flex bg-slate-50 rounded-sm shadow-md">
         <div className="bg-white m-2 p-2 border-gray-300 rounded-lg w-64 border shadow-sm">
@@ -29,19 +29,19 @@ const Transactions = () => {
         <table className="table-auto w-full">
           <thead>
             <tr>
-              <th className="pb-4 align-middle">Order ID</th>
-              <th className="pb-4 align-middle">Order Date</th>
-              <th className="pb-4 align-middle">Order Amount</th>
-              <th className="pb-4 align-middle">Transaction fees</th>
+              <th className="pb-4 text-left">Order ID</th>
+              <th className="pb-4 text-left">Order Date</th>
+              <th className="pb-4 text-right">Order Amount</th>
+              <th className="pb-4 text-right">Transaction fees</th>
             </tr>
           </thead>
           <tbody>
             {orderData.map((order, index) => (
               <tr key={index} className="border p-4">
-                <td className="border-b pb-4 align-middle text-blue-600" colSpan={2}> {order.orderId} </td>
-                <td className="border-b pb-4 align-middle" colSpan={2}> {order.orderDate} </td>
-                <td className="border-b pb-4 align-middle" colSpan={2}> {`₹${order.orderAmount}`} </td>
-                <td className="border-b pb-4 align-middle" colSpan={2}> {`₹${order.transactionFees}`} </td>
+                <td className="border-b pb-4 align-middle text-blue-600"> {order.orderId} </td>
+                <td className="border-b pb-4 align-middle"> {order.orderDate} </td>
+                <td className="border-b pb-4 align-middle text-right"> {`₹${order.orderAmount}`} </td>
+                <td className="border-b pb-4 align-middle text-right"> {`₹${order.transactionFees}`} </td>
               </tr>
             ))}
           </tbody>
